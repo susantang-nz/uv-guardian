@@ -1,0 +1,210 @@
+body {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    background-color:#D7D7D7;
+}
+
+.container {
+    width: 100%;
+    height: 100hv;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.title-line {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.today {
+    color:#003285;
+}
+
+.uv-guardian {
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    color: #003285;
+}
+
+.logo {
+    margin-top: .8rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+.tagline {
+    margin:0 auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: #FF7F3E;
+    font-size: 1.5rem;
+}
+
+.main {
+    width: 80%;
+    height: 60vh;
+    margin: auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1.5fr repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+}
+
+.item-uv {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 0; 
+    align-items: center;
+}
+
+.item-ozone, .item-sky {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-advice {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-titles {
+    font-size: larger;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    color: #2A629A;
+}
+
+.times {
+    font-size: .8rem;
+    margin: 0;
+    padding: 0;
+    color: #FF7F3E;
+}
+
+#uv-index-time {
+    margin-bottom: 0;
+}
+
+#uv-index{
+    font-size: 10rem;
+    padding: 0 2.5rem;
+    margin: 0 auto;
+}
+
+#uv-level {
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+    color: #3D74B6;
+}
+
+#uv-max {
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+#max-uv-subtitle {
+    margin-top: 1rem;
+}
+
+#ozone {
+    margin: 0 0;
+    padding: 0;
+    font-size: 5rem;
+}
+
+.ozone-message {
+    color: #3D74B6;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+#sky {
+    text-transform: capitalize;
+    padding: 0;
+    margin: 0;
+    color: #3D74B6;
+    font-size: 1.5rem;
+}
+
+#weather-icon {
+    width: 5.5rem;
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+#advice-subtitle {
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+}
+
+.how-to-protect {
+    display: flex;
+    gap: 2rem;
+}
+
+footer {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 0.7rem;
+}
+
+
+.image-credit {
+    color: #777;
+    display: flex;
+}
+
+.values {
+    color: #003285;
+}
+
+.item-uv,
+.item-ozone,
+.item-sky,
+.item-advice {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+}

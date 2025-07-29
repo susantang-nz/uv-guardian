@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UV Guardian</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="title-line">
+          <h1 class="uv-guardian">UV Guardian</h1>
+          <img class="logo" src="/images/uv-protection.png" alt="logo" />
+          <h1 class="uv-guardian">Your Real-Time Sun Safety Alerts</h1>
+        </div>
+
+        <p class="tagline">
+          Kia Ora, Auckland, Aotearoa. Today is
+          <span class="today"><%= todayString %></span>
+        </p>
+      </header>
+
+      <session class="main">
+        <div class="item-uv">
+          <p id="uv-index" class="values"><%= uv %></p>
+          <p class="sub-titles">UV Index</p>
+
+          <% if (uv < 3){ %>
+          <p id="uv-level">Low</p>
+          <% } else if (uv >= 3 && uv < 6) { %>
+          <p id="uv-level">Medium</p>
+          <% } else if (uv >= 6 && uv < 8) { %>
+          <p id="uv-level">High</p>
+          <% } else if (uv >= 8 && uv < 11) { %>
+          <p id="uv-level">Very High</p>
+          <% } else { %>
+          <p id="uv-level">Extremely High</p>
+          <% } %>
+          <p id="uv-index-time" class="times">Checked at <%= uvTime %></p>
+
+          <p id="max-uv-subtitle" class="sub-titles">Max UV Index</p>
+          <p class="times">Daily Max at <%= uvMaxTime %></p>
+          <p id="uv-max" class="values"><%= uvMax %></p>
+        </div>
+        <div class="item-ozone">
+          <p class="sub-titles">Ozone DU</p>
+          <p id="ozone" class="values"><%= ozone %></p>
+
+          <% if (ozone < 250) { %>
+          <p class="ozone-message">Weak Shield 🌞</p>
+          <% } else if (ozone < 300) { %>
+          <p class="ozone-message">Thin Shield 🧢</p>
+          <% } else if (ozone < 350) { %>
+          <p class="ozone-message">Normal Shield ✅</p>
+          <% } else { %>
+          <p class="ozone-message">Strong Shield 🛡️</p>
+          <% } %>
+        </div>
+        <div class="item-sky">
+          <p class="sub-titles">Sky</p>
+          <img
+            id="weather-icon"
+            src="https://openweathermap.org/img/wn/<%= icon %>@2x.png"
+            alt="<%= description %>"
+          />
+          <p id="sky" class="values"><%= description %></p>
+        </div>
+        <div class="item-advice">
+          <% if (uv < 3){ %>
+          <p id="advice-subtitle" class="sub-titles">
+            😊 Safe to Play Outside!
+          </p>
+          <div class="how-to-protect">
+            <img src="/images/sunglasses.png" alt="Use sunglasses" />
+            <img src="/images/sunscreen.png" alt="Use sunscreen" />
+          </div>
+
+          <% } else if (uv >= 3 && uv < 6) { %>
+          <p id="advice-subtitle" class="sub-titles">
+            👒 Hat & 🧴 Sunscreen, Please!
+          </p>
+          <div class="how-to-protect">
+            <img src="/images/sunglasses.png" alt="Use sunglasses" />
+            <img src="/images/sunscreen.png" alt="Use sunscreen" />
+            <img src="/images/hat.png" alt="Wear hat" />
+          </div>
+          <% } else if (uv >= 6 && uv < 8) { %>
+          <p id="advice-subtitle" class="sub-titles">
+            🕛 Take a Break in the Shade (10am - 4pm)!
+          </p>
+          <div class="how-to-protect">
+            <img src="/images/sunglasses.png" alt="Use sunglasses" />
+            <img src="/images/sunscreen.png" alt="Use sunscreen" />
+            <img src="/images/hat.png" alt="Wear hat" />
+            <img src="/images/umbrella.png" alt="Seek shade" />
+          </div>
+          <% } else if (uv >= 8 && uv < 11) { %>
+          <p id="advice-subtitle" class="sub-titles">Cover Up & Find Shade!</p>
+          <div class="how-to-protect">
+            <img src="/images/sunglasses.png" alt="Use sunglasses" />
+            <img src="/images/sunscreen.png" alt="Use sunscreen" />
+            <img src="/images/hat.png" alt="Wear hat" />
+            <img src="/images/umbrella.png" alt="Seek shade" />
+            <img
+              src="/images/clothing.png"
+              alt="Wear sun protective clothing"
+            />
+          </div>
+          <% } else { %>
+          <p id="advice-subtitle" class="sub-titles">
+            🌞 Sun is Strong — 🏠 Best to Stay Indoors!
+          </p>
+          <div class="how-to-protect">
+            <img src="/images/sunglasses.png" alt="Use sunglasses" />
+            <img src="/images/sunscreen.png" alt="Use sunscreen" />
+            <img src="/images/hat.png" alt="Wear hat" />
+            <img src="/images/umbrella.png" alt="Seek shade" />
+            <img
+              src="/images/clothing.png"
+              alt="Wear sun protective clothing"
+            />
+            <img src="/images/stay.png" alt="Stay inside" />
+            <% } %>
+          </div>
+        </div>
+      </session>
+
+      <footer>
+        <div class="power-by">
+          © <%= currentYear %> UV Guardian | Data powered by
+          <a href="https://openuv.io" target="_blank">OpenUV</a> and
+          <a href="https://openweathermap.org/" target="_blank">OpenWeather</a>.
+        </div>
+
+        <div class="image-credit">
+          <p>
+            Image Credit:
+            <a
+              href="https://www.flaticon.com/free-icons/uv-protection"
+              title="UV protection icons"
+              >UV protection icons created by Freepik - Flaticon</a
+            >
+            <a
+              href="https://www.flaticon.com/free-icons/sunglasses"
+              title="sunglasses icons"
+              >Sunglasses icons created by Freepik - Flaticon</a
+            >
+            <a
+              href="https://www.flaticon.com/free-icons/sunscreen"
+              title="sunscreen icons"
+              >Sunscreen icons created by Freepik - Flaticon</a
+            >
+            <a href="https://www.flaticon.com/free-icons/hat" title="hat icons"
+              >Hat icons created by Good Ware - Flaticon</a
+            >
+            <a
+              href="https://www.flaticon.com/free-icons/umbrella"
+              title="umbrella icons"
+              >Umbrella icons created by judanna - Flaticon</a
+            >
+            <a
+              href="https://www.flaticon.com/free-icons/sun-protection"
+              title="sun protection icons"
+              >Sun protection icons created by Prosymbols Premium - Flaticon</a
+            ><a
+              href="https://www.flaticon.com/free-icons/stay-at-home"
+              title="stay at home icons"
+              >Stay at home icons created by bsd - Flaticon</a
+            >
+          </p>
+        </div>
+      </footer>
+    </div>
+    <script src="/index.js"></script>
+  </body>
+</html>
