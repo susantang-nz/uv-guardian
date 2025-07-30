@@ -23,9 +23,9 @@ body {
 .title-line {
 
     display: flex;
-    gap: 1rem;
+    gap: .5rem;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: .5rem;
     margin-bottom: 0;
     padding-top: 0;
     padding-bottom: 0;
@@ -47,6 +47,8 @@ body {
 
 .tagline {
     font-size: 1rem;
+    margin: 0;
+    padding: 0;
 }
 
 .today {
@@ -71,7 +73,7 @@ body {
 
 .main {
     width: 80%;
-    height: 60vh;
+    height: 55vh;
     margin: auto;
     padding: 0 2rem;
     display: grid;
@@ -199,7 +201,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
     font-size: 0.7rem;
 }
 
