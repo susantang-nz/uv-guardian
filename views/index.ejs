@@ -12,33 +12,42 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="container">
       <header class="header">
         <div class="title-line">
-          <h1 class="uv-guardian">UV Guardian</h1>
           <img class="logo" src="/images/uv-protection.png" alt="logo" />
-          <h1 class="uv-guardian">Your Real-Time Sun Safety Alerts</h1>
+          <h1 class="uv-guardian">Guardian</h1>
+        </div>
+
+        <div class="slogan">
+          <p class="real-time">Your Real-Time Sun Safety Alerts</p>
         </div>
 
         <p class="tagline">
-          Kia Ora, Auckland, Aotearoa. Today is
-          <span class="today"><%= todayString %></span>
+          Kia Ora, Auckland. Today is
+          <span class="today"> <%= todayString %> </span>
         </p>
       </header>
 
       <session class="main">
         <div class="item-uv">
-          <p id="uv-index" class="values"><%= uv %></p>
+          <% let uvClass="" ; switch (true) { case (uv < 3): uvClass="uv-low" ;
+          break; case (uv < 6): uvClass="uv-medium" ; break; case (uv < 8):
+          uvClass="uv-high" ; break; case (uv < 11): uvClass="uv-very-high" ;
+          break; default: uvClass="uv-extreme" ; } %>
+
+          <p id="uv-index" class="values <%= uvClass %>"><%= uv %></p>
           <p class="sub-titles">UV Index</p>
 
           <% if (uv < 3){ %>
           <p id="uv-level">Low</p>
-          <% } else if (uv >= 3 && uv < 6) { %>
+          <% } else if (uv>= 3 && uv < 6) { %>
           <p id="uv-level">Medium</p>
-          <% } else if (uv >= 6 && uv < 8) { %>
+          <% } else if (uv>= 6 && uv < 8) { %>
           <p id="uv-level">High</p>
-          <% } else if (uv >= 8 && uv < 11) { %>
+          <% } else if (uv>= 8 && uv < 11) { %>
           <p id="uv-level">Very High</p>
           <% } else { %>
           <p id="uv-level">Extremely High</p>
@@ -75,14 +84,13 @@
         <div class="item-advice">
           <% if (uv < 3){ %>
           <p id="advice-subtitle" class="sub-titles">
-            😊 Safe to Play Outside!
+            😊 Minimum Protection Required!
           </p>
           <div class="how-to-protect">
             <img src="/images/sunglasses.png" alt="Use sunglasses" />
-            <img src="/images/sunscreen.png" alt="Use sunscreen" />
           </div>
 
-          <% } else if (uv >= 3 && uv < 6) { %>
+          <% } else if (uv>= 3 && uv < 6) { %>
           <p id="advice-subtitle" class="sub-titles">
             👒 Hat & 🧴 Sunscreen, Please!
           </p>
@@ -91,7 +99,7 @@
             <img src="/images/sunscreen.png" alt="Use sunscreen" />
             <img src="/images/hat.png" alt="Wear hat" />
           </div>
-          <% } else if (uv >= 6 && uv < 8) { %>
+          <% } else if (uv>= 6 && uv < 8) { %>
           <p id="advice-subtitle" class="sub-titles">
             🕛 Take a Break in the Shade (10am - 4pm)!
           </p>
@@ -101,7 +109,7 @@
             <img src="/images/hat.png" alt="Wear hat" />
             <img src="/images/umbrella.png" alt="Seek shade" />
           </div>
-          <% } else if (uv >= 8 && uv < 11) { %>
+          <% } else if (uv>= 8 && uv < 11) { %>
           <p id="advice-subtitle" class="sub-titles">Cover Up & Find Shade!</p>
           <div class="how-to-protect">
             <img src="/images/sunglasses.png" alt="Use sunglasses" />
@@ -115,7 +123,7 @@
           </div>
           <% } else { %>
           <p id="advice-subtitle" class="sub-titles">
-            🌞 Sun is Strong — 🏠 Best to Stay Indoors!
+            🌞 Sun is Strong — Best to Stay Indoors!
           </p>
           <div class="how-to-protect">
             <img src="/images/sunglasses.png" alt="Use sunglasses" />

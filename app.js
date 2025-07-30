@@ -17,7 +17,7 @@ import {
 const app = express();
 const port = 3000;
 
-const useMockData = true;
+const useMockData = false;
 
 app.use(express.static("public"))
 
