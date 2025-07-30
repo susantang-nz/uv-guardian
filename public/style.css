@@ -5,7 +5,7 @@ body {
 
 .container {
     width: 100%;
-    height: 100hv;
+    height: 90hv;
     margin: 0 auto;
     padding: 0;
 }
@@ -40,13 +40,13 @@ body {
 
 .real-time {
     margin: 0 auto;
-    font-size: 2rem;
+    font-size: 1.2rem;
     color: #FF7F3E;
     font-weight: 400;
 }
 
 .tagline {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .today {

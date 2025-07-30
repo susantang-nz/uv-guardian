@@ -18,7 +18,7 @@ const app = express();
 // const port = 3000;
 const port = process.env.PORT || 3000;
 
-const useMockData = false;
+const useMockData = true;
 
 app.use(express.static("public"))
 
@@ -85,6 +85,10 @@ app.get("/", async (req, res) => {
             sunrise: null,
             sunset: null,
             weather: null,
+            description: null,
+            icon: null,
+            currentYear: null,
+            todayString: null,
         });
     }
 })
