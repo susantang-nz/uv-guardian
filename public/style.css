@@ -69,8 +69,6 @@ body {
     height: 4.5rem;
 }
 
-
-
 .main {
     width: 80%;
     height: 55vh;
@@ -89,7 +87,6 @@ body {
     justify-content: start;
     gap: 0;
     align-items: center;
-    min-width: 400px;
 }
 
 .item-ozone,
@@ -106,7 +103,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 600px;
 }
 
 .sub-titles {
@@ -206,9 +202,16 @@ footer {
 }
 
 
-.image-credit {
+.credits {
     color: #777;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.credits * {
+    margin: 0;
 }
 
 .values {
@@ -249,7 +252,7 @@ footer {
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 850px) {
 
     .main {
         width: 70%;
@@ -281,14 +284,29 @@ footer {
 
 }
 
-@media (max-width: 900px) {
+@media (max-width: 480px) {
+
+    .container {
+        width: 100%;
+    }
+
+    .header {
+        width: 90%;
+        margin: 0 auto 2rem auto;
+
+    }
+
+    .main {
+        width: 90%;
+        margin: auto;
+    }
 
     .item-ozone,
     .item-sky,
     .item-advice,
     .item-uv {
-        min-width: 400px;
-        height: 250px;
+        width: 100%;
+        margin: auto;
     }
 
 }
